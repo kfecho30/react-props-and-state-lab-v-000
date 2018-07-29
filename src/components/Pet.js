@@ -8,13 +8,12 @@ class Pet extends React.Component {
     
     const { pet } = this.props
     const { name, type, gender, age, weight, isAdopted } = pet
-    
+
     return (
       <div className="card">
         <div className="content">
           <a className="header">
-            {/*'♀' OR '♂' */}
-            PET NAME
+            {name} {gender === 'male' ? '♂' : '♀'}
           </a>
           <div className="meta">
             <span className="date">PET TYPE</span>

@@ -15,8 +15,13 @@ class App extends React.Component {
     }
   }
 
-  onChangeType = ({ target: {value} }) => {
-    this.setState({ filters: { ...this.state.filters, type: value } });
+  onChangeType = event => {
+    this.setState({ 
+      filters: { 
+        ...this.state.filters,
+        type: event 
+      } 
+    });
   };
 
   fetchPets = () => {

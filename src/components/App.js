@@ -16,24 +16,24 @@ class App extends React.Component {
   }
 
   onChangeType = event => {
-    this.setState({ 
-      filters: { 
+    this.setState({
+      filters: {
         ...this.state.filters,
         type: event 
-      } 
+      }
     });
   };
 
   fetchPets = () => {
-    let endpoint = '/api/pets';
+    let url = '/api/pets';
 
     if (this.state.filters.type !== 'all') {
-      endpoint += `?type=${this.state.filters.type}`;
+      url += `?type=${this.state.filters.type}`;
     }
 
-    fetch(endpoint)
+    fetch(url)
       .then(res => res.json())
-      .then(pets => this.setState({ pets }));
+      .then(pets => this.setState({pets}));
   };
 
   render() {

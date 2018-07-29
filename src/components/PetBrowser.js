@@ -12,5 +12,6 @@ class PetBrowser extends React.Component {
         {pets}
       </div>
     }
+  }
 
 export default PetBrowser

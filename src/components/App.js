@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-import Filters from './Filters'
-import PetBrowser from './PetBrowser'
+import Filters from './Filters';
+import PetBrowser from './PetBrowser';
 
 class App extends React.Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
       pets: [],
@@ -19,18 +19,18 @@ class App extends React.Component {
     this.setState({
       filters: {
         ...this.state.filters,
-        type: event 
+        type: event
       }
     });
   };
 
   fetchPets = () => {
     let url = '/api/pets';
-
+    
     if (this.state.filters.type !== 'all') {
       url += `?type=${this.state.filters.type}`;
     }
-
+    
     fetch(url)
       .then(res => res.json())
       .then(pets => this.setState({pets}));

@@ -5,6 +5,10 @@ class Pet extends React.Component {
     this.props.onAdoptPet(this.props.pet.id)
   }
   render() {
+    
+    const { pet } = this.props
+    const { name, type, gender, age, weight, isAdopted } = pet
+    
     return (
       <div className="card">
         <div className="content">

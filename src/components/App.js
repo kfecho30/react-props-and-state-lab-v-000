@@ -36,6 +36,15 @@ class App extends React.Component {
       .then(pets => this.setState({pets}));
   };
 
+  onAdoptPet = (id) => {
+    this.state.pets.forEach(p => {
+      if (p.id === id){
+        p.isAdopted = true
+      }
+    })
+  }
+  
+
   render() {
     return (
       <div className="ui container">
